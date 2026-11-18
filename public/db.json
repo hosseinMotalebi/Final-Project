@@ -1,0 +1,275 @@
+{
+  "Blogcard": [
+    {
+      "id": "1",
+      "img": "/blog/01-cheesecake.svg",
+      "data": "on September 19,2023",
+      "title": "Class New Your-style Cheesecake Recipe",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit erat, ornare elementum dolor gravida, vehicula vestibulum nibh..."
+    },
+    {
+      "id": "2",
+      "img": "/blog/02-sugar.svg",
+      "data": "on September 19,2023",
+      "title": "The Impact of Sugar Consumption on Your Health",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit erat, ornare elementum dolor gravida, vehicula vestibulum nibh..."
+    },
+    {
+      "id": "3",
+      "img": "/blog/03-tablet.svg",
+      "data": "on September 19,2023",
+      "title": "Lorem ipsum dolor sit amet,consctetur adipiscing elit.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit erat, ornare elementum dolor gravida, vehicula vestibulum nibh..."
+    },
+    {
+      "id": "4",
+      "img": "/blog/04-clock.svg",
+      "data": "on September 19,2023",
+      "title": "Lorem ipsum dolor sit amet,consctetur adipiscing elit.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit erat, ornare elementum dolor gravida, vehicula vestibulum nibh..."
+    },
+    {
+      "id": "5",
+      "img": "/blog/05-fasting.svg",
+      "data": "on September 19,2023",
+      "title": "Unlocking the Benefits of Intermittent Fasting for",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit erat, ornare elementum dolor gravida, vehicula vestibulum nibh..."
+    },
+    {
+      "id": "6",
+      "img": "/blog/06-weight-loss.svg",
+      "data": "on September 19,2023",
+      "title": "The Impact of Sugar Consumption on Your Health",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit erat, ornare elementum dolor gravida, vehicula vestibulum nibh..."
+    }
+  ],
+  "Recipes": [
+    {
+      "id": "1",
+      "title": "Mixed Greens with Sun-Dried Tomato Dressing:",
+      "author": "Author name",
+      "date": "Sep 26, 2023",
+      "comments": 22,
+      "saves": 9,
+      "saved": false,
+      "rating": 4,
+      "ratingValue": "4.0",
+      "reviews": 10,
+      "image": "/recipes/mixed-greens.png",
+      "prepTime": "5 mins",
+      "cookTime": "5 mins",
+      "serving": "4 Serving",
+      "description": "This recipe features a vibrant and refreshing salad made with a medley of mixed greens, accompanied by a flavorful sun-dried tomato dressing.",
+      "ingredients": [
+        "1/4 cup Sun-dried tomatoes",
+        "2 tbsp Soymilk",
+        "5/8 tsp Rosemary",
+        "3/4 tsp Thyme",
+        "1/4 medium whole Tomatoes",
+        "1/4 fruit without seeds Lemons"
+      ],
+      "checked": [
+        0,
+        1
+      ],
+      "instructions": [
+        "Soak the sun-dried tomatoes in the soy milk for an hour.",
+        "Chop the fresh herbs, tomato, and onions and toss them with the salad greens. Add additional veggies as desired",
+        "Juice the lemon and blend it with the soaked tomatoes, rosemary and thyme until smooth, then pour the dressing over the salad."
+      ],
+      "nutrition": [
+        {
+          "label": "Calories",
+          "value": "494"
+        },
+        {
+          "label": "Carbs",
+          "value": "80g"
+        },
+        {
+          "label": "Fat",
+          "value": "18g"
+        },
+        {
+          "label": "Protein",
+          "value": "24g"
+        },
+        {
+          "label": "Fiber",
+          "value": "23g"
+        },
+        {
+          "label": "Net carbs",
+          "value": "56g"
+        },
+        {
+          "label": "Sodium",
+          "value": "444mg"
+        },
+        {
+          "label": "Cholesterol",
+          "value": "0mg"
+        }
+      ],
+      "categories": "Dinner, Salad",
+      "cardReviews": 34,
+      "cardInstructions": [
+        "Soak the sun-dried tomatoes in the soy milk for an hour.",
+        "Chop the fresh herbs, tomato, and onions and toss them with the salad greens. Add additional veggies as desired",
+        "Juice the lemon and combine in a high-powered blender with the sun dried tomato mixture and garlic until smooth. Pour over salad and toss together well. Top with brazil nuts and enjoy!"
+      ],
+      "cookingNotes": [
+        "Ensure the freshness of your mixed greens. Look for crisp, vibrant leaves with no signs of wilting or browning."
+      ]
+    }
+  ],
+  "RecentRecipes": [
+    {
+      "id": "1",
+      "title": "Green Goddess Wrap Is a Light & Simple",
+      "image": "/recipes/green-goddess-wrap.png",
+      "rating": 4,
+      "cals": 300
+    },
+    {
+      "id": "2",
+      "title": "Green Goddess Wrap Is a Light & Simple",
+      "image": "/recipes/bbq-chicken-pizza.png",
+      "rating": 4,
+      "cals": 475
+    },
+    {
+      "id": "3",
+      "title": "Green Goddess Wrap Is a Light & Simple",
+      "image": "/recipes/strawberry-walnut-spinach-salad.png",
+      "rating": 4,
+      "cals": 139
+    }
+  ],
+  "Subscribers": [
+    {
+      "email": "mmtlby@gamil.com",
+      "id": "pxcub9Hxojw"
+    },
+    {
+      "email": "salam@gmail.com",
+      "id": "eUxmB6XcxXY"
+    }
+  ],
+  "RelatedRecipes": [
+    {
+      "id": "1",
+      "title": "Fisherman's Quick Fish",
+      "image": "/recipes/related-fish.png"
+    },
+    {
+      "id": "2",
+      "title": "Toast with Tomato, Onion, & Hummus",
+      "image": "/recipes/related-toast.png"
+    },
+    {
+      "id": "3",
+      "title": "Ham, Egg, and Spinach Roll-Ups",
+      "image": "/recipes/related-wrap-ham.png"
+    },
+    {
+      "id": "4",
+      "title": "Chicken Ranch Wrap",
+      "image": "/recipes/related-chicken-ranch.png"
+    },
+    {
+      "id": "5",
+      "title": "Truffle Popcorn",
+      "image": "/recipes/related-popcorn.png"
+    },
+    {
+      "id": "6",
+      "title": "Tuna Mex Tuna Salad",
+      "image": "/recipes/related-tuna.png"
+    }
+  ],
+  "YouMightLike": [
+    {
+      "id": "1",
+      "title": "Toast with Tomato, Onion, & Hummus",
+      "image": "https://s6.uupload.ir/files/banana-pancake[1]_9w4w.png"
+    },
+    {
+      "id": "2",
+      "title": "spinach and cheese pasta",
+      "image": "https://s6.uupload.ir/files/cajun-pasta[1]_l1t7.png"
+    },
+    {
+      "id": "3",
+      "title": "Strawberry and Cherry pancake",
+      "image": "https://s6.uupload.ir/files/chocolate-chip-cookie[1]_7mgz.png"
+    },
+    {
+      "id": "4",
+      "title": "Creamy Cajun Chicken Pasta",
+      "image": "https://s6.uupload.ir/files/spinach-pasta[1]_cdf.png"
+    },
+    {
+      "id": "5",
+      "title": "Healthy Banana pancake",
+      "image": "https://s6.uupload.ir/files/strawberry-pancake[1]_6p3j.png"
+    },
+    {
+      "id": "6",
+      "title": "Chocolate Chip Cookie Recipe",
+      "image": "https://s6.uupload.ir/files/toast[1]_njm9.png"
+    }
+  ],
+  "TrendingRecipes": [
+    {
+      "id": "1",
+      "title": "Green Goddess Wrap Is a Light & Simple",
+      "image": "/recipes/trend-wrap.png",
+      "rating": 4,
+      "cals": 300
+    },
+    {
+      "id": "2",
+      "title": "Green Goddess Wrap Is a Light & Simple",
+      "image": "/recipes/trend-salad.png",
+      "rating": 4,
+      "cals": 475
+    },
+    {
+      "id": "3",
+      "title": "Green Goddess Wrap Is a Light & Simple",
+      "image": "/recipes/trend-berry.png",
+      "rating": 4,
+      "cals": 139
+    }
+  ],
+  "Products": [
+    {
+      "id": "1",
+      "title": "Related Product",
+      "image": "/recipes/product-spoons.png",
+      "link": "#"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json",
+  "SearchItems": [
+    {
+      "id": "1",
+      "title": "cheesecake recipe",
+      "text": "Lorem ipsum dolor sit amet",
+      "image": "/search/cheesecake-1.png"
+    },
+    {
+      "id": "2",
+      "title": "Easy Cheesecake Recipe",
+      "text": "Lorem ipsum dolor sit amet",
+      "image": "/search/cheesecake-2.png"
+    },
+    {
+      "id": "3",
+      "title": "Baked Cheesecake",
+      "text": "Lorem ipsum dolor sit amet",
+      "image": "/search/cheesecake-3.png"
+    }
+  ]
+}
