@@ -8,7 +8,6 @@ export function BlogCard({ blog }) {
           className="h-full w-full object-cover"
         />
       </figure>
-
       <div className="px-3 pb-4 pt-2">
         <div className="text-[10px] leading-4 text-[#777] font-roboto font-bold">{blog.data}</div>
         <h2 className="mt-1 text-xl font-roboto font-black leading-tight text-black">
@@ -20,7 +19,6 @@ export function BlogCard({ blog }) {
           </p>
         )}
       </div>
-    
     </article>
   );
 }

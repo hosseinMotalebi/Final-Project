@@ -47,7 +47,7 @@ export function RecipeCard({ recipe, className = "" }) {
           ))}
         </div>
 
-        <h3 className="mt-2 text-xs md:mt-3 md:text-sm">{recipe.title}</h3>
+        <h3 className="mt-2 text-xs md:mt-3 md:text-sm font-roboto font-medium">{recipe.title}</h3>
 
         <div className="hidden md:flex items-center justify-between mt-6">
           <div className="flex items-center gap-2">

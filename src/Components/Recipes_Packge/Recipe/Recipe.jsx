@@ -20,7 +20,6 @@ export function Recipe() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // گرفتن اطلاعات از فایل public/db.json
   useEffect(() => {
     fetch("/db.json")
       .then((res) => res.json())
@@ -201,12 +200,11 @@ const [savedSuggestions, setSavedSuggestions] = useState([]);
     <>
     <section className="mx-auto max-w-6xl px-4 pt-28 pb-16 font-roboto lg:pt-32">
       {/* مسیر صفحه */}
-      <div className="text-sm text-[#8B8B8B]">
+      <div className="text-sm text-[#8B8B8B] font-roboto font-medium">
         <Link to="/">Home</Link> &gt; <Link to="/Recipe">Recipe</Link> &gt;{" "}
         <span className="text-black">{recipe.title}</span>
       </div>
 
-      {/* موبایل و تبلت: تیتر Recipes + آیکون‌ها */}
       <div className="mt-6 flex items-center justify-between lg:hidden">
         <h2 className="text-2xl font-medium text-black">Recipes</h2>
         <div className="flex items-center gap-4">
@@ -225,13 +223,13 @@ const [savedSuggestions, setSavedSuggestions] = useState([]);
         </div>
       </div>
 
-      <h1 className="mt-3 max-w-[30rem] text-xl font-medium text-black lg:mt-8 lg:text-3xl">
+      <h1 className="mt-3 max-w-[35rem] text-xl font-medium text-black lg:mt-8 lg:text-3xl">
         {recipe.title.replace(":", "")}
       </h1>
 
       {/* اطلاعات بالای صفحه */}
       <div className="mt-4 flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 pb-4">
-        <div className="flex flex-wrap items-center gap-6 text-xs text-black">
+          <div className="flex flex-wrap items-center gap-6 text-xs text-black">
           <span>
             <i className="fa-regular fa-circle-user text-[#B85C54]"></i>{" "}
             {recipe.author}

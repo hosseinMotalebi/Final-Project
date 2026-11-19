@@ -303,7 +303,6 @@ function Footer() {
         </nav>
       </footer>
 
-      {/* --Footer-- */}
       </div>
 
       <footer className="bg-base-200 px-6 pb-6 pt-10 font-roboto lg:hidden">
@@ -334,8 +333,6 @@ function Footer() {
             ))}
           </div>
         </div>
-
-        {/* آیکون‌ها: روی موبایل بالای خط */}
         <div className="mt-8 flex justify-center gap-6 md:hidden">
           {socials.map((icon) => (
             <a key={icon} href="#">
@@ -361,5 +358,6 @@ function Footer() {
       </footer>
     </div>
   );
+  {/* --Footer-- */}
 }
 export default Footer;
