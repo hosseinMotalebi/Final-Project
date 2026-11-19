@@ -1,7 +1,7 @@
 import { RecipeCard } from "../RecipeCard/RecipeCard";
 import { exploreRecipes } from "../../../data/ExploreRecipes";
 
-export function ExploreRecipes() {
+export function ExploreRecipes({ bookmarks = [], handleBookmark }) {
   return (
     <section className="max-w-5xl mx-auto px-4 py-10 font-roboto">
       <div className="flex items-end justify-between mb-6">
@@ -14,6 +14,8 @@ export function ExploreRecipes() {
           <RecipeCard
             key={recipe.id}
             recipe={recipe}
+            bookmarks={bookmarks}
+            handleBookmark={handleBookmark}
             className={index > 3 ? "hidden md:flex" : ""}
           />
         ))}

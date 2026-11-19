@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { categories, brands } from "../../../data/Pupular";
 import Footer from "../../Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
-export function Home() {
-  const inputRefmain = useRef(null);
+export function Home({ bookmarks = [], handleBookmark }) {
+      const inputRefmain = useRef(null);
   const ClickRef = () => {
     inputRefmain.current.focus();
     alert("ایمیل :" + inputRefmain.current.value + "باموفیقت ثیت شد");
@@ -216,8 +216,7 @@ export function Home() {
           </button>
         </div>
       </section>
-      <TrendingRecipes />
-      <section  
+<TrendingRecipes bookmarks={bookmarks} handleBookmark={handleBookmark} />      <section  
         className="
           max-w-5xl
           mx-auto px-4 pb-10
@@ -260,8 +259,7 @@ export function Home() {
             <BlogCard key={blog.image} blog={blog} />
           ))}
         </div>
-        <ExploreRecipes />
-      </section>
+<ExploreRecipes bookmarks={bookmarks} handleBookmark={handleBookmark} />      </section>
       <section
         className="
           h-auto px-5 pb-12

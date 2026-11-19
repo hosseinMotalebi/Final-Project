@@ -1,17 +1,27 @@
-import { useState } from "react";
-
-export function RecipeCard({ recipe, className = "" }) {
+export function RecipeCard({
+  recipe,
+  className = "",
+  bookmarks = [],
+  handleBookmark,
+}) {
   const stars = [1, 2, 3, 4, 5];
 
-  // saved یعنی این کارت سیو شده یا نه (اولش false)
-  const [saved, setSaved] = useState(false);
+  // چک می‌کنه آیا این غذا توی لیست بوکمارک‌ها هست یا نه
+  const saved = bookmarks.some((item) => item.title === recipe.title);
 
   function toggleSave() {
-    setSaved(!saved);
+    if (handleBookmark) {
+      handleBookmark(recipe);
+    }
   }
 
   return (
-    <div className={"card bg-base-100 border border-gray-200 rounded-lg overflow-hidden " + className}>
+    <div
+      className={
+        "card bg-base-100 border border-gray-200 rounded-lg overflow-hidden " +
+        className
+      }
+    >
       <div className="relative">
         <img
           src={recipe.image}
@@ -21,7 +31,7 @@ export function RecipeCard({ recipe, className = "" }) {
         <button
           type="button"
           onClick={toggleSave}
-          className="absolute top-2 right-2 w-7 h-7 md:top-3 md:right-3 md:w-9 md:h-9 bg-white rounded-md flex items-center justify-center"
+          className="absolute top-2 right-2 w-7 h-7 md:top-3 md:right-3 md:w-9 md:h-9 bg-white rounded-md flex items-center justify-center cursor-pointer"
         >
           <i
             className={
@@ -47,7 +57,9 @@ export function RecipeCard({ recipe, className = "" }) {
           ))}
         </div>
 
-        <h3 className="mt-2 text-xs md:mt-3 md:text-sm font-roboto font-medium">{recipe.title}</h3>
+        <h3 className="mt-2 text-xs md:mt-3 md:text-sm font-roboto font-medium">
+          {recipe.title}
+        </h3>
 
         <div className="hidden md:flex items-center justify-between mt-6">
           <div className="flex items-center gap-2">
@@ -59,7 +71,8 @@ export function RecipeCard({ recipe, className = "" }) {
             <span className="text-xs text-black">Alex Martin</span>
           </div>
           <span className="border border-gray-200 rounded-md px-2 py-1 text-xs text-gray-500">
-            <i className="fa-solid fa-fire text-[#B85C54]"></i> {recipe.cals} cals
+            <i className="fa-solid fa-fire text-[#B85C54]"></i> {recipe.cals}{" "}
+            cals
           </span>
         </div>
       </div>

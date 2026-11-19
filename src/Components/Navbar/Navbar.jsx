@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import avatarImg from "../../assets/avatar.png";
 import { SearchModal } from "../Search/SearchModal";
 
-export function Navbar() {
+export function Navbar({ bookmarks = [] }) {
   const navigate = useNavigate();
   useLocation();
 
@@ -42,8 +42,21 @@ export function Navbar() {
           <Link to="/About">About us</Link>
         </nav>
 
-        {/* موبایل و تبلت: آیکون سرچ فقط وقتی لاگین باشه + دکمه همبرگری */}
+        {/* موبایل و تبلت: آیکون بوکمارک + سرچ (اگه لاگین باشه) + دکمه همبرگری */}
         <div className="lg:hidden flex items-center gap-4">
+          <Link
+            to="/saved"
+            className="relative text-xl text-[#B85C54]"
+            aria-label="saved recipes"
+          >
+            <i className="fa-solid fa-bookmark"></i>
+            {bookmarks.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                {bookmarks.length}
+              </span>
+            )}
+          </Link>
+
           {user && (
             <button
               type="button"
@@ -73,6 +86,9 @@ export function Navbar() {
             <Link to="/AddRecipe" onClick={() => setOpen(false)}>Add Recipe</Link>
             <Link to="/Blog" onClick={() => setOpen(false)}>blog</Link>
             <Link to="/About" onClick={() => setOpen(false)}>About us</Link>
+            <Link to="/saved" onClick={() => setOpen(false)} className="text-[#B85C54]">
+              Saved Recipes ({bookmarks.length})
+            </Link>
 
             {user ? (
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
@@ -107,7 +123,20 @@ export function Navbar() {
 
         {/* دکمه‌های سمت راست فقط دسکتاپ */}
         {user ? (
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-5">
+            <Link
+              to="/saved"
+              className="relative text-2xl text-[#B85C54]"
+              aria-label="saved recipes"
+            >
+              <i className="fa-solid fa-bookmark"></i>
+              {bookmarks.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                  {bookmarks.length}
+                </span>
+              )}
+            </Link>
+
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
@@ -150,6 +179,19 @@ export function Navbar() {
         ) : (
           <div className="hidden lg:flex items-center gap-4">
             <Link
+              to="/saved"
+              className="relative text-2xl text-[#B85C54] mr-2"
+              aria-label="saved recipes"
+            >
+              <i className="fa-solid fa-bookmark"></i>
+              {bookmarks.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                  {bookmarks.length}
+                </span>
+              )}
+            </Link>
+
+            <Link
               to="/Login"
               className="
                 px-6 xl:px-9 py-3 mt-1
@@ -185,4 +227,4 @@ export function Navbar() {
       )}
     </>
   );
-}
+} 

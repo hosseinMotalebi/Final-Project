@@ -1,7 +1,7 @@
 import { RecipeCard } from "../RecipeCard/RecipeCard";
 import { recipes } from "../../../data/recipes";
 
-export function TrendingRecipes() {
+export function TrendingRecipes({ bookmarks = [], handleBookmark }) {
   return (
     <section className="max-w-5xl mx-auto px-4 py-10 font-roboto">
       <div className="flex items-end justify-between mb-6">
@@ -11,7 +11,12 @@ export function TrendingRecipes() {
 
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
         {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
+          <RecipeCard
+            key={recipe.id}
+            recipe={recipe}
+            bookmarks={bookmarks}
+            handleBookmark={handleBookmark}
+          />
         ))}
       </div>
     </section>

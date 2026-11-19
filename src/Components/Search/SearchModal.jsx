@@ -3,14 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 export function SearchModal({ onClose }) {
   const navigate = useNavigate();
-
-  // متنی که کاربر توی باکس سرچ تایپ می‌کنه
   const [search, setSearch] = useState("");
-
-  // لیست غذاهایی که از db.json می‌گیریم
   const [items, setItems] = useState([]);
 
-  // گرفتن دیتاها از فایل public/db.json
   useEffect(() => {
     fetch("/db.json")
       .then((res) => res.json())
@@ -19,12 +14,19 @@ export function SearchModal({ onClose }) {
       });
   }, []);
 
-  // فیلتر کردن لیست بر اساس چیزی که کاربر نوشته
   const result = items.filter((item) =>
     item.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  // وقتی کاربر روی یکی از نتایج کلیک کرد
+  // وقتی کاربر Enter زد یا روی ذره‌بین کلیک کرد
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (search.trim() !== "" && result.length === 0) {
+      onClose();
+      navigate("/404"); // می‌فرسته به صفحه ۴۰۴ خودت
+    }
+  };
+
   const handleClick = () => {
     onClose();
     navigate("/Recipe");
@@ -32,7 +34,6 @@ export function SearchModal({ onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 bg-white overflow-y-auto font-roboto">
-      {/* دکمه ضربدر بستن بالا سمت راست */}
       <button
         type="button"
         onClick={onClose}
@@ -42,8 +43,11 @@ export function SearchModal({ onClose }) {
       </button>
 
       <div className="max-w-2xl mx-auto px-5 pt-16 pb-12">
-        {/* باکس سرچ */}
-        <div className="max-w-md mx-auto flex items-center h-12 px-4 border border-gray-400 rounded-md">
+        {/* باکس سرچ تبدیل به فرم شد تا با Enter کار کنه */}
+        <form
+          onSubmit={handleSearchSubmit}
+          className="max-w-md mx-auto flex items-center h-12 px-4 border border-gray-400 rounded-md"
+        >
           <input
             type="text"
             value={search}
@@ -52,13 +56,13 @@ export function SearchModal({ onClose }) {
             autoFocus
             className="w-full text-sm text-black outline-none"
           />
-          <i className="fa-solid fa-magnifying-glass text-lg text-gray-600 ml-2"></i>
-        </div>
+          <button type="submit" className="ml-2 cursor-pointer">
+            <i className="fa-solid fa-magnifying-glass text-lg text-gray-600"></i>
+          </button>
+        </form>
 
-        {/* خط جداکننده */}
         <hr className="mt-7 border-gray-500" />
 
-        {/* لیست نتایج */}
         <div className="max-w-lg mx-auto mt-8 flex flex-col gap-6">
           {result.length > 0 ? (
             result.map((item) => (
@@ -81,9 +85,11 @@ export function SearchModal({ onClose }) {
               </div>
             ))
           ) : (
-            <p className="text-center text-sm text-gray-400 py-8">
-              No results found
-            </p>
+            <div className="text-center py-8">
+              <p className="text-sm text-gray-400 mb-3">
+                No results found. Press Enter to continue.
+              </p>
+            </div>
           )}
         </div>
       </div>

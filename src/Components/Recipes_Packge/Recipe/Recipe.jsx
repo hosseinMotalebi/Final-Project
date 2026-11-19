@@ -5,9 +5,8 @@ import { FaRegHeart, FaHeart, FaStar } from "react-icons/fa";
 import { BsThreeDots } from "react-icons/bs";
 import Footer from "../../Footer/Footer";
 
-export function Recipe() {
-  // دیتاها از public/db.json میان
-  const [recipe, setRecipe] = useState(null);
+export function Recipe({ bookmarks = [], handleBookmark }) {
+    const [recipe, setRecipe] = useState(null);
   const [recent, setRecent] = useState([]);
   const [related, setRelated] = useState([]);
   const [trending, setTrending] = useState([]);
@@ -16,7 +15,6 @@ export function Recipe() {
       
   // وضعیت دکمه‌ها
   const [checked, setChecked] = useState([]);
-  const [saved, setSaved] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -28,9 +26,7 @@ export function Recipe() {
         const firstRecipe = db.Recipes[0];
         setRecipe(firstRecipe);
         setChecked(firstRecipe.checked);
-        setSaved(firstRecipe.saved);
-
-        setRecent(db.RecentRecipes);
+setRecent(db.RecentRecipes);
         setRelated(db.RelatedRecipes);
         setTrending(db.TrendingRecipes);
         setProduct(db.Products[0]);
@@ -39,7 +35,7 @@ export function Recipe() {
   }, []);
 
   // تیک زدن مواد لازم
-  function toggleIngredient(index) {
+function toggleIngredient(index) {
     if (checked.includes(index)) {
       setChecked(checked.filter((i) => i !== index));
     } else {
@@ -48,10 +44,15 @@ export function Recipe() {
   }
 
   // دکمه ذخیره
-  function toggleSave() {
-    setSaved(!saved);
+// چک می‌کنه این غذا توی لیست بوکمارک‌ها هست یا نه
+const saved = recipe && bookmarks.some((item) => item.title === recipe.title);
+
+// دکمه ذخیره
+function toggleSave() {
+  if (recipe) {
+    handleBookmark(recipe);
   }
-  // دکمه اشتراک گذاری
+}  // دکمه اشتراک گذاری
   function handleShare() {
     navigator.clipboard.writeText(window.location.href);
     alert("Link copied!");
